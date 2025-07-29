@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kanhaikumarsah.com.np/sitemap.xml
