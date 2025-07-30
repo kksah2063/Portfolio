@@ -8,48 +8,459 @@
     <meta name="description" content="Explore my portfolio and full-stack projects built with React, Express, MongoDB, and more." />
     <meta name="keywords" content="Kanhai, kanhaikumarsah, full-stack, portfolio, developer, React, Node.js, BCA student, Nepal developer" />
     <meta name="robots" content="index, follow" />
+       <!-- Bootstrap & Font Awesome -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
+    <!-- custom  css stlye -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <a href="#" class="logo">Kanhai Kumar Sah</a>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <header>
+      <!-- Offcanvas Sidebar Toggle for Small Screens -->
+      <button
+        class="btn btn-primary position-fixed top-0 end-0 m-3 d-md-none"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#sidebar"
+        aria-controls="sidebar"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navbar for md and up -->
+      <nav
+        class="navbar navbar-expand-md navbar-light bg-light d-none d-md-flex px-3 sticky-top-nav"
+      >
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="Logo" height="50" />
+        </a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
         </ul>
+      </nav>
+
+      <!-- Offcanvas Sidebar -->
+      <div
+        class="offcanvas offcanvas-start d-md-none"
+        tabindex="-1"
+        id="sidebar"
+        aria-labelledby="sidebarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="sidebarLabel">
+            <img src="images/logo.png" alt="Logo" height="50" />
+          </h5>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+          <!-- Navigation Links -->
+          <ul class="nav flex-column mb-4">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Project</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+          <div
+            class="mt-3 d-flex flex-column flex-md-row align-items-center justify-content-center gap-3"
+          >
+            <a href="https://github.com/kksah2063" class="me-3 text-primary">
+              <i class="fab fa-github fa-lg me-2"></i> <span>GitHub</span>
+            </a>
+
+            <a href="httpshttps://linkedin.com" class="me-3 text-primary">
+              <i class="fab fa-linkedin fa-lg me-2"></i> <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
       </div>
-    </nav>
+    </header>
 
-    <!-- Main Content -->
-    <div class="container" id="home">
-      <h1>Hello, I'm <span class="highlight">Kanhai Kumar Sah</span></h1>
-      <p>💻 A BCA student passionate about web development.</p>
+    <main>
+      <!-- Home Section - Portfolio Style -->
+      <section class="py-5 bg-white text-center" id="home">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <!-- Circular Image -->
+            <div class="col-md-4 mb-4 mb-md-0">
+              <img
+                src="images/homepage.jpg"
+                alt="Kanhai's Space"
+                class="img-fluid rounded-circle shadow-lg"
+              />
+            </div>
 
-      <h2 id="projects">🚀 My Projects</h2>
-      <ul class="projects">
-        <li>
-          <a href="https://github.com/kksah2063/weather-app-bootstrap" target="_blank">Weather App</a>
-        </li>
-        <li>
-          <a href="https://github.com/kksah2063/rock-paper-game" target="_blank">Rock Paper Game</a>
-        </li>
-        <li>
-          <a href="https://github.com/kksah2063/CatSnap" target="_blank">CatSnap</a>
-        </li>
-      </ul>
+            <!-- Intro Text -->
+            <div class="col-md-6 text-md-start">
+              <h1 class="fw-bold mb-3">Hello, I'm Kanhai Kumar Sah</h1>
+              <p class="lead text-muted">
+                I'm a passionate Full-Stack MERN Developer and a dedicated BCA
+                student. I specialize in building responsive, dynamic web
+                applications and love turning ideas into elegant, functional
+                code. Whether it's crafting user-friendly interfaces or
+                optimizing backend performance, I bring creativity and precision
+                to every project.
+              </p>
+              <a href="#project" class="btn btn-primary mt-3"
+                >Explore My Work</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <!-- Footer -->
-      <footer id="contact">
-        <p>
-          Contact: <a href="mailto:kksah2063@gmail.com">kksah2063@gmail.com</a>
+      <!-- About Section -->
+      <section class="py-5 bg-light text-center" id="about">
+        <div class="container">
+          <h2 class="mb-4">About Me</h2>
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <p class="lead text-muted">
+                I'm <strong>Kanhai Kumar Sah</strong>, a Full-Stack MERN
+                Developer and BCA student with a passion for clean code and
+                elegant design. From user interfaces to server-side logic, I
+                create solutions that are both functional and beautiful. Curious
+                by nature and obsessed with detail, I'm always exploring new
+                tools to elevate my development game.
+              </p>
+              <a href="#contact" class="btn btn-outline-primary mt-3"
+                >Let's Connect</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="py-5 bg-white text-center" id="service">
+        <div class="container">
+          <h2 class="mb-4">Services</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <i class="fas fa-laptop-code fa-2x mb-3 text-primary"></i>
+                  <h5 class="card-title">Web Development</h5>
+                  <p class="card-text text-muted">
+                    Custom websites and web apps built with the MERN
+                    stack—responsive, scalable, and performance-tuned.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <i class="fas fa-brain fa-2x mb-3 text-primary"></i>
+                  <h5 class="card-title">Technical Consulting</h5>
+                  <p class="card-text text-muted">
+                    Helping you choose the right tech stack, plan architecture,
+                    and level up your project’s efficiency.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <i class="fas fa-pen-nib fa-2x mb-3 text-primary"></i>
+                  <h5 class="card-title">UI/UX Design</h5>
+                  <p class="card-text text-muted">
+                    Designing user interfaces that are both stylish and
+                    intuitive—clean visuals meet seamless interaction.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="py-5 bg-light text-center" id="project">
+        <div class="container">
+          <h2 class="mb-4">Featured Projects</h2>
+          <div class="row">
+            <!-- Project Card 1 -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="images/portfolio image.PNG"
+                  class="card-img-top"
+                  alt="Portfolio Website (Node.js)"
+                  height="162"
+                  width="ms-auto"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Portfolio Platform</h5>
+                  <p class="card-text text-muted">
+                    Full-stack project built using
+                    <strong>Node.js, Express, EJS, Bootstrap</strong>, and a
+                    database. Showcases personal branding and backend
+                    integration.
+                  </p>
+                  <a
+                    href="https://yourportfolio.com"
+                    class="btn btn-outline-primary btn-sm"
+                    >View Live</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="images/weather app image.jpg"
+                  class="card-img-top"
+                  alt="Weather App"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Weather App</h5>
+                  <p class="card-text text-muted">
+                    A dynamic weather interface using
+                    <strong>HTML, CSS, Bootstrap & JavaScript</strong>. Displays
+                    real-time data with clean UX and responsive layout.
+                  </p>
+                  <a
+                    href="https://yourweatherapp.com"
+                    class="btn btn-outline-primary btn-sm"
+                    >View Live</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="images/catsnap image.jpg"
+                  class="card-img-top"
+                  alt="Catsnap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Catsnap App</h5>
+                  <p class="card-text text-muted">
+                    Fun, responsive app built with
+                    <strong>HTML, CSS, JavaScript & Axios</strong> that fetches
+                    random cat facts and images with an engaging UI.
+                  </p>
+                  <a
+                    href="https://yourcatsnapapp.com"
+                    class="btn btn-outline-primary btn-sm"
+                    >View Live</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="images/rock-paper-and-scissor-game image.jpg"
+                  class="card-img-top"
+                  alt="Rock Paper Game"
+                  height="162px"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Rock-Paper Game</h5>
+                  <p class="card-text text-muted">
+                    Classic game built using
+                    <strong>HTML, CSS & JavaScript</strong> with interactive
+                    animations and responsive controls for desktop and mobile.
+                  </p>
+                  <a
+                    href="https://yourrockpapergame.com"
+                    class="btn btn-outline-primary btn-sm"
+                    >Play Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section container" id="contact">
+        <h2 class="text-center mb-4">
+          <i class="fas fa-envelope text-primary me-2"></i>Get in Touch
+        </h2>
+        <p class="text-center text-muted mb-5">
+          Feel free to drop me a message about your project, collaboration, or
+          just to say hello!
         </p>
-      </footer>
-    </div>
+
+        <!-- Success Alert -->
+        <div
+          id="formAlert"
+          class="alert alert-success text-center d-none"
+          role="alert"
+        >
+          Your data has been submitted. We'll be in touch!
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <form class="contact-form" onsubmit="return confirmSubmission()">
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  placeholder="Kanhai Kumar Sah"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  class="form-control"
+                  placeholder="Web App Inquiry"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  id="message"
+                  class="form-control"
+                  rows="5"
+                  placeholder="Tell me about your idea..."
+                  required
+                ></textarea>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <i class="fas fa-paper-plane me-2"></i>Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Start -->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+      <div class="container">
+        <div class="row text-center text-md-start">
+          <!-- About Me -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">About Me</h5>
+            <p class="text-light">
+              I'm <strong>Kanhai Kumar Sah</strong>, a full-stack MERN developer
+              and BCA student. I build responsive, high-performance web
+              applications and creative interfaces that fuse code and design.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#home" class="text-light text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="#service" class="text-light text-decoration-none"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#project" class="text-light text-decoration-none"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="text-light text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Contact</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-envelope me-2"></i> kksah2063@gmail.com</li>
+              <li><i class="fas fa-phone me-2"></i> +977-9815220040</li>
+              <li>
+                <i class="fas fa-map-marker-alt me-2"></i> Bharatpur, Nepal
+              </li>
+            </ul>
+
+            <!-- Social Icons -->
+            <div class="mt-3 d-flex flex-wrap gap-3">
+              <a
+                href="https://github.com/kksah2063"
+                class="text-light text-decoration-none d-flex align-items-center"
+              >
+                <i class="fab fa-github fa-lg me-2"></i> <span>GitHub</span>
+              </a>
+              <a
+                href="https://linkedin.com"
+                class="text-light text-decoration-none d-flex align-items-center"
+              >
+                <i class="fab fa-linkedin fa-lg me-2"></i> <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3 bg-dark text-white">
+          &copy; 2025 <strong>Kanhai Kumar Sah</strong> | All Rights Reserved ·
+          Designed with <i class="fas fa-heart text-danger"></i> using Bootstrap
+          & MERN
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top Button -->
+    <button
+      id="scrollTopBtn"
+      class="scroll-btn btn btn-primary position-fixed bottom-0 end-0 m-3"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Include Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Script for Contact Form and Scroll Button -->
+    <script src="main.js"></script>
   </body>
 </html>
