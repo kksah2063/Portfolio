@@ -3,37 +3,3 @@ node_modules/
 
 # Environment variables
 .env
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# OS-specific files
-.DS_Store
-Thumbs.db
-
-# IDE/editor folders
-.vscode/
-.idea/
-
-# Temporary files
-tmp/
-*.tmp
-
-# Build artifacts (if added later)
-dist/
-
-# Coverage reports (if using testing tools later)
-coverage/
-
-# Database dumps or sensitive files
-*.sql
-*.sqlite
-
-# environment-specific files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
