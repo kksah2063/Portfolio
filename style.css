@@ -1,7 +1,11 @@
 /* Typography and Base Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #0d6efd, #0a58ca);
+  color: #212529;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 h1, h2, h5 {
   font-weight: 700;
@@ -23,17 +27,9 @@ h1, h2, h5 {
 .sticky-top-nav {
   position: sticky;
   top: 0;
-  z-index: 1030;
-}
-
-
- /* Scroll-To-Top Button */
-#scrollTopBtn {
-  border-radius: 50%;
-  padding: 0.5rem 0.75rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1040;
-  display: block; /* Always visible — you can later toggle this dynamically with JS */
+  z-index: 1050;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 
@@ -54,7 +50,18 @@ h1, h2, h5 {
   color: #6c757d;
 }
 
+.card-img-top {
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
 /* Contact Form Styling */
+.contact-section {
+  padding: 2.5rem 1rem;
+}
+
 .contact-form input,
 .contact-form textarea {
   border-radius: 0.35rem;
@@ -67,8 +74,14 @@ h1, h2, h5 {
 }
 
 /* Footer Link Styling */
+footer {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
 footer a.text-light {
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 footer a.text-light:hover {
   color: #0d6efd !important;
@@ -76,3 +89,32 @@ footer a.text-light:hover {
   background-color: rgba(13, 110, 253, 0.1);
   border-radius: 0.25rem;
 }
+
+
+/* Responsive Tweaks */
+@media (max-width: 576px) {
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
+
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+}
+
