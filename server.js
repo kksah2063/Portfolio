@@ -83,7 +83,6 @@
 //   console.log(`🚀 Server is running at http://localhost:${PORT}`);
 // });
 
-
 const express = require("express");
 const path = require("path");
 const { SitemapStream, streamToPromise } = require("sitemap");
@@ -96,17 +95,13 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// 🔧 Middleware setup
+// 🔧 Middleware
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, "public")));
 
-// 🛠️ MySQL connection
-if (!process.env.DB_HOST || !process.env.DB_PORT) {
-  throw new Error("❌ Missing DB_HOST or DB_PORT in .env");
-}
-
+// 🛠️ MySQL Connection
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   port: Number(process.env.DB_PORT),
@@ -115,10 +110,7 @@ const connection = mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
-console.log("🔧 Connecting to DB with config:", {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-});
+console.log("🔍 ENV DB_HOST:", process.env.DB_HOST); // Debug
 
 connection.connect((err) => {
   if (err) {
@@ -128,12 +120,12 @@ connection.connect((err) => {
   }
 });
 
-// 🏠 Homepage route
+// 🏠 Homepage
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// 🗺️ Sitemap route
+// 🗺️ Sitemap
 app.get("/sitemap.xml", async (req, res) => {
   const links = [
     { url: "/", changefreq: "monthly", priority: 1.0 },
@@ -147,7 +139,7 @@ app.get("/sitemap.xml", async (req, res) => {
   res.send(sitemap.toString());
 });
 
-// 📩 Form submission route
+// 📩 Form Submission
 app.post("/submit-user", (req, res) => {
   const { username, email, subject, message } = req.body;
   const id = faker.string.uuid();
@@ -167,7 +159,7 @@ app.post("/submit-user", (req, res) => {
   });
 });
 
-// 🚀 Start server
+// 🚀 Start Server
 app.listen(PORT, () => {
   console.log(`🚀 Server is running at http://localhost:${PORT}`);
 });
